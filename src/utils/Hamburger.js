@@ -1,6 +1,13 @@
-const hamburger = document.querySelector(".hamburger input");
-const nav = document.querySelector("#ul");
+const hamburgerButtonElement = document.querySelector("#hamburger");
+const navbar = document.querySelector("#navbar");
+const main = document.getElementById("main");
 
-hamburger.addEventListener("click", function () {
-  nav.classList.toggle("slide");
+hamburgerButtonElement.addEventListener("click", (event) => {
+  navbar.classList.toggle("open");
+  event.stopPropagation();
+});
+
+main.addEventListener("click", (event) => {
+  navbar.classList.remove("open");
+  event.stopPropagation();
 });
